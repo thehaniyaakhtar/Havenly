@@ -1,164 +1,232 @@
-# 🛡️ Havenly - AI Insurance Advisor
+# 🏥 Havenly - Insurance Plan Finder
 
-A modern, AI-powered insurance recommendation platform with a React frontend and Streamlit backend.
+A modern, user-friendly insurance plan comparison and recommendation platform built with Streamlit and React. Find the perfect health insurance plan tailored to your needs with our intelligent AI assistant.
 
-## 🚀 Features
+## ✨ Features
 
-### React Frontend
-- **Modern UI/UX**: Beautiful, responsive design with Tailwind CSS
-- **Interactive Components**: Charts, animations, and real-time updates
-- **AI Integration**: Seamless connection to Streamlit backend
-- **Mobile Responsive**: Works perfectly on all devices
+### 🎯 **Core Functionality**
+- **Smart Plan Search**: Find insurance plans based on location, age, income, and preferences
+- **AI-Powered Recommendations**: Get personalized plan suggestions with detailed explanations
+- **Interactive Dashboard**: Visualize plan statistics, costs, and coverage options
+- **Plan Details Explorer**: Deep dive into specific plan features and benefits
+- **Intelligent Chatbot**: Ask questions about plans, coverage, and insurance terms
 
-### Streamlit Backend
-- **AI-Powered Matching**: Advanced plan recommendation engine
-- **Interactive Dashboards**: Comprehensive analytics and visualizations
-- **Real-time Data**: Live updates and insights
-- **Multi-page App**: Organized navigation and features
+### 🎨 **Modern UI/UX**
+- **Earthy Color Scheme**: Beautiful greens and browns for a natural, trustworthy feel
+- **Minimal Design**: Clean, consistent interface across all pages
+- **Responsive Layout**: Works seamlessly on desktop and mobile devices
+- **Card-Based Results**: Easy-to-scan plan comparisons with key information
+
+### 🚀 **Performance Optimized**
+- **Trimmed Datasets**: Optimized CSV files for faster loading and deployment
+- **Memory Efficient**: No caching issues or memory errors
+- **Streamlined Backend**: Efficient data processing and analysis
+
+## 🛠️ Technology Stack
+
+### **Backend**
+- **Streamlit**: Main application framework
+- **Pandas**: Data manipulation and analysis
+- **Python**: Core programming language
+
+### **Frontend**
+- **React**: Modern UI components
+- **Tailwind CSS**: Utility-first styling
+- **JavaScript**: Interactive functionality
+
+### **Data**
+- **CSV Files**: Optimized insurance datasets
+- **AI Integration**: Intelligent plan recommendations
 
 ## 📁 Project Structure
 
 ```
 poly/
+├── Home.py                 # Main Streamlit application
+├── pages/                  # Streamlit pages
+│   ├── Dashboard.py        # Analytics dashboard
+│   ├── Details.py          # Plan details explorer
+│   ├── Find_a_Plan.py      # Plan search and comparison
+│   ├── You_and_your_Plan.py # AI chatbot assistant
+│   └── About_Us.py         # About page
 ├── src/                    # React frontend
 │   ├── components/         # React components
-│   ├── index.js           # React entry point
-│   └── index.css          # Tailwind styles
-├── public/                # React public assets
-├── pages/                 # Streamlit pages
-├── Home.py               # Enhanced Streamlit homepage
-├── utils.py              # AI utilities
-├── requirements.txt      # Python dependencies
+│   ├── App.js             # Main React app
+│   └── index.js           # React entry point
+├── filtered_plan2.csv     # Optimized plan data
+├── filtered_rate2.csv     # Optimized rate data
+├── filtered_benefits2.csv # Optimized benefits data
+├── filtered_service_area.csv # Service area data
+├── requirements.txt       # Python dependencies
 ├── package.json          # Node.js dependencies
 └── README.md            # This file
 ```
 
-## 🛠️ Setup Instructions
+## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.8+
-- Node.js 16+
-- npm or yarn
+### **Local Development**
 
-### 1. Clone and Setup
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/Havenly.git
+   cd Havenly
+   ```
 
-```bash
-# Clone the repository
-git clone <your-repo-url>
-cd poly
+2. **Set up Python environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-# Create Python virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+3. **Run the Streamlit app**
+   ```bash
+   streamlit run Home.py
+   ```
 
-# Install Python dependencies
-pip install -r requirements.txt
-```
+4. **Set up React frontend (optional)**
+   ```bash
+   npm install
+   npm start
+   ```
 
-### 2. Setup React Frontend
+### **Deployment on Streamlit Cloud**
 
-```bash
-# Install Node.js dependencies
-npm install
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push origin master
+   ```
 
-# Start React development server
-npm start
-```
-
-The React app will run on `http://localhost:3000`
-
-### 3. Setup Streamlit Backend
-
-```bash
-# Activate virtual environment (if not already activated)
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Run Streamlit app
-streamlit run Home.py
-```
-
-The Streamlit app will run on `http://localhost:8501`
-
-### 4. Integration
-
-The React frontend is configured to proxy requests to the Streamlit backend. The integration allows:
-
-- React handles the UI/UX and user interactions
-- Streamlit provides the AI backend and data processing
-- Seamless communication between frontend and backend
-
-## 🎯 Key Features
-
-### React Frontend Features
-- **Homepage**: Modern landing page with interactive elements
-- **Plan Finder**: Advanced search and filtering interface
-- **Dashboard**: Comprehensive analytics and insights
-- **About Page**: Company information and team details
-- **Responsive Design**: Mobile-first approach
-- **Animations**: Smooth transitions and micro-interactions
-
-### Streamlit Backend Features
-- **AI Plan Matching**: Intelligent recommendation engine
-- **Interactive Charts**: Plotly visualizations
-- **Real-time Analytics**: Live data updates
-- **Multi-page Navigation**: Organized feature structure
-- **Data Processing**: Efficient CSV handling
-- **User Authentication**: Secure access control
+2. **Deploy on Streamlit Cloud**
+   - Go to [share.streamlit.io](https://share.streamlit.io)
+   - Connect your GitHub repository
+   - Set branch to **master** (not main)
+   - Deploy!
 
 ## 📊 Data Sources
 
-The application uses several CSV files for insurance data:
-- `filtered_plans.csv`: Plan information and metadata
-- `filtered_rate.csv`: Pricing and rate data
-- `filtered_benefits.csv`: Benefit details and coverage
-- `filtered_business_rules.csv`: Business logic and rules
+The application uses optimized insurance datasets:
+- **Plans**: Health insurance plan information and features
+- **Rates**: Premium rates and pricing data
+- **Benefits**: Coverage details and benefits information
+- **Service Areas**: Geographic coverage information
+
+All datasets have been trimmed for optimal performance and deployment.
+
+## 🎯 Key Features Explained
+
+### **Smart Plan Finder**
+- Enter your location, age, and income
+- Get personalized plan recommendations
+- Compare costs, coverage, and features
+- View "Why this plan?" explanations
+
+### **Interactive Dashboard**
+- Visualize plan statistics by metal level
+- Compare average premiums across categories
+- Explore coverage trends and patterns
+- Interactive charts and graphs
+
+### **AI Chatbot Assistant**
+- Ask questions about insurance terms
+- Get plan recommendations
+- Understand coverage options
+- Receive personalized advice
+
+### **Plan Details Explorer**
+- Deep dive into specific plans
+- View all plan features and benefits
+- Compare plan types and metal levels
+- Understand coverage limitations
+
+## 🎨 Design Philosophy
+
+### **Earthy Color Palette**
+- **Primary Green**: #228B22 (Forest Green)
+- **Secondary Brown**: #8B4513 (Saddle Brown)
+- **Accent Colors**: Various shades of green and brown
+- **Background**: Clean whites and light grays
+
+### **Minimal UI Principles**
+- Clean, uncluttered interfaces
+- Consistent spacing and typography
+- Card-based information display
+- Intuitive navigation
 
 ## 🔧 Configuration
 
-### Environment Variables
-Create a `.env` file in the root directory:
+### **Streamlit Configuration**
+The app uses default Streamlit settings with optimized performance:
+- No caching to prevent memory issues
+- Efficient data loading
+- Responsive design
 
-```env
-GOOGLE_API_KEY=your_google_api_key
-STREAMLIT_SERVER_PORT=8501
-REACT_APP_API_URL=http://localhost:8501
-```
+### **Environment Variables**
+No sensitive environment variables required - all data is public insurance information.
 
-### Customization
-- **Colors**: Modify `tailwind.config.js` for brand colors
-- **Charts**: Update chart configurations in Streamlit components
-- **Data**: Replace CSV files with your own insurance data
-- **AI**: Configure Google Generative AI settings in `utils.py`
+## 🐛 Troubleshooting
 
-## 🚀 Deployment
+### **Common Issues**
 
-### React Frontend Deployment
-```bash
-# Build for production
-npm run build
+1. **Port Already in Use**
+   ```bash
+   streamlit run Home.py --server.port 8502
+   ```
 
-# Deploy to your preferred platform (Vercel, Netlify, etc.)
-```
+2. **Memory Errors**
+   - The app now uses optimized datasets
+   - No caching to prevent memory issues
+   - Efficient data processing
 
-### Streamlit Backend Deployment
-```bash
-# Deploy to Streamlit Cloud or your preferred platform
-streamlit deploy Home.py
-```
+3. **File Not Found Errors**
+   - All files use the correct trimmed dataset names
+   - Ensure all CSV files are in the root directory
+   - Fixed Details.py to use `filtered_plan2.csv`
 
-## 📈 Performance Optimization
+4. **Duplicate Labels Error**
+   - Fixed groupby operations in Home.py and Dashboard.py
+   - Proper data merging to avoid duplicate indices
 
-- **React**: Code splitting and lazy loading
-- **Streamlit**: Caching with `@st.cache_data`
-- **Data**: Efficient CSV processing and filtering
-- **Charts**: Optimized Plotly configurations
+5. **HTML Rendering Issues**
+   - Fixed About_Us.py HTML rendering
+   - Simplified HTML in Find_a_Plan.py and You_and_your_Plan.py
 
-## 🔒 Security
+### **Performance Tips**
+- Use the trimmed datasets for faster loading
+- Clear browser cache if experiencing issues
+- Restart the app if memory issues occur
+- Clear Streamlit cache if needed: `streamlit cache clear`
 
-- **API Keys**: Secure environment variable handling
-- **Data Privacy**: Local data processing
-- **HTTPS**: Production deployment with SSL
-- **Input Validation**: Sanitized user inputs
+### **Deployment Issues**
+- Ensure you're using the **master** branch (not main) for Streamlit Cloud
+- All CSV files must be in the root directory
+- Check that all file paths are correct
+
+## 📈 Recent Updates
+
+### **v2.1 - Bug Fixes & Stability**
+- ✅ Fixed Details.py FileNotFoundError (filtered_plan2.csv)
+- ✅ Resolved duplicate labels in groupby operations
+- ✅ Fixed HTML rendering issues in About_Us.py
+- ✅ Improved error handling across all pages
+- ✅ Enhanced deployment stability
+
+### **v2.0 - Performance & UI Overhaul**
+- ✅ Switched to trimmed datasets for faster performance
+- ✅ Implemented earthy green/brown color scheme
+- ✅ Added minimal, consistent UI design
+- ✅ Fixed all memory and caching issues
+- ✅ Enhanced AI chatbot capabilities
+- ✅ Improved plan comparison interface
+- ✅ Added "Why this plan?" explanations
+- ✅ Optimized for Streamlit Cloud deployment
+
+### **v1.0 - Initial Release**
+- Basic plan search functionality
+- Simple dashboard
+- Plan details viewer
 
 ## 🤝 Contributing
 
@@ -168,25 +236,24 @@ streamlit deploy Home.py
 4. Test thoroughly
 5. Submit a pull request
 
-## 📝 License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 🆘 Support
 
-For support and questions:
-- 📧 Email: hello@havenly.com
-- 📞 Phone: 1-800-HAVENLY
-- 🌐 Website: havenly.com
+If you encounter any issues:
+1. Check the troubleshooting section above
+2. Review the error logs
+3. Create an issue on GitHub
+4. Contact the development team
 
-## 🎉 Acknowledgments
+## 🔗 Links
 
-- **React Team**: For the amazing frontend framework
-- **Streamlit Team**: For the powerful data app framework
-- **Tailwind CSS**: For the utility-first CSS framework
-- **Plotly**: For the interactive charting library
-- **Google AI**: For the generative AI capabilities
+- **Live Demo**: [Streamlit Cloud Deployment](your-streamlit-url)
+- **GitHub Repository**: [Havenly](https://github.com/yourusername/Havenly)
+- **Documentation**: See DEPLOYMENT.md for detailed setup instructions
 
 ---
 
-**Made with ❤️ by the Havenly Team**
+**Built with ❤️ for better insurance experiences**
