@@ -4,7 +4,7 @@ import re
 
 genai.configure(api_key="AIzaSyAPBF6D_wymLzS4t4l95O2xfV0swzD91Qc")
 model = genai.GenerativeModel("models/gemini-1.5-flash-002")
-policy_df = pd.read_csv("filtered_plans.csv")
+policy_df = pd.read_csv("filtered_plan2.csv")
 
 def filter_policies(user_input, exclude_names=None):
     if exclude_names is None:
