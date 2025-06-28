@@ -1,4 +1,3 @@
-```markdown
 # 🛡️ Havenly — Your Personalized AI Insurance Advisor
 
 > _“Not just policies — a plan that fits right. For every walk of life.”_
@@ -27,18 +26,26 @@ Havenly is a GenAI-powered insurance guidance platform built to simplify the com
 
 ```
 
-📁 poly/
-├── Home.py               # Welcome page with tagline and intro
-├── Find a Plan.py        # Interactive plan finder
-├── You and your Plan.py  # Chatbot powered by Gemini
-├── Details.py            # Plan deep-dive view
-├── About Us.py           # Project summary + image
-├── utils.py              # Core logic: Gemini, filtering, scoring
-├── requirements.txt      # Python dependencies
-├── filtered\_plan\_attributes.csv     # Cleaned plan dataset
-├── filtered\_rate\_clean.csv          # Trimmed pricing dataset
-├── filtered\_service\_area\_clean.csv  # Location data
-├── img.jfif / imgg.jfif  # UI images
+📁 havenly/                        ← your main project folder (root of Git repo)
+├── Home.py                       ← Main landing page
+├── About Us.py                   ← About the platform
+├── Find a Plan.py                ← Questionnaire-based plan finder
+├── You and your Plan.py          ← Chatbot interface
+├── Details.py                    ← Plan detail viewer
+├── utils.py                      ← Gemini + data logic
+├── requirements.txt              ← Dependencies
+├── README.md                     ← Project overview
+├── img.jfif                      ← Hero/landing image
+├── imgg.jfif                     ← About page image
+
+# Cleaned datasets (used across app)
+├── filtered_plan2.csv            ← Main plan dataset
+├── filtered_rate_clean.csv       ← Cleaned rate info (costs by age, tobacco)
+├── filtered_service_area_clean.csv  ← State & service area details
+
+# Optional extras (if needed later)
+├── .streamlit/
+│   └── config.toml   
 
 ````
 
