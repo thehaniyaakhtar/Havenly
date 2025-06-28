@@ -98,4 +98,4 @@ if submit:
 
         st.session_state["matched_plans"] = top["PlanMarketingName"].tolist()
         if st.button("💬 Chat about these plans"):
-            st.switch_page("Chat.py")
+            st.switch_page("You and your Plan")
