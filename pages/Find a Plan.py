@@ -6,9 +6,9 @@ st.set_page_config(page_title="Find Your Best Plan", layout="centered")
 st.title("Find the Best Plan for You")
 
 # Load datasets
-plan_df = pd.read_csv("filtered_plans.csv")
+plan_df = pd.read_csv("filtered_plan2.csv")
 service_df = pd.read_csv("filtered_service_area.csv")
-rate_df = pd.read_csv("filtered_rate.csv")
+rate_df = pd.read_csv("filtered_rate2.csv")
 
 # ----- User Form -----
 with st.form("plan_form"):
