@@ -12,7 +12,7 @@ st.subheader("Your Personalized GenAI Insurance Advisor")
 # --- Cached plan loader ---
 @st.cache_data
 def load_policy_data():
-    return pd.read_csv("filtered_plans.csv")
+    return pd.read_csv("filtered_plan2.csv")
 
 policy_df = load_policy_data()
 st.success(f"✅ {len(policy_df)} insurance plans loaded.")
