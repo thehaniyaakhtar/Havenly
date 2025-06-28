@@ -2,8 +2,8 @@ import google.generativeai as genai
 import pandas as pd
 import re
 
-genai.configure(api_key="AIzaSyAPBF6D_wymLzS4t4l95O2xfV0swzD91Qc")
-model = genai.GenerativeModel("models/gemini-1.5-flash-002")
+genai.configure(api_key="")
+model = genai.GenerativeModel("")
 policy_df = pd.read_csv("filtered_plans.csv")
 
 def filter_policies(user_input, exclude_names=None):
