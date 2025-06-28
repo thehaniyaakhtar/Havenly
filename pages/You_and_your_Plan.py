@@ -176,7 +176,30 @@ with col1:
                     st.session_state.last_followup_prompt = response
 
             except Exception as e:
-                response = f"I apologize, but I encountered an error while processing your request. Please try rephrasing your question or contact support if the issue persists. Error: {str(e)}"
+                st.error(f"❌ Error processing request: {str(e)}")
+                response = f"""🔧 **Technical Issue**
+
+I encountered an error while processing your request. This might be due to:
+
+1. **API Configuration:** The Google Gemini API key might not be set up correctly
+2. **Network Issues:** Please check your internet connection
+3. **Service Temporarily Unavailable:** The AI service might be down
+
+**What you can do:**
+- Try asking a simpler question
+- Refresh the page and try again
+- Check the API configuration in the `.env` file
+- Contact support if the issue persists
+
+**For now, here's some helpful information:**
+
+🔍 **Finding Insurance Plans:**
+- Consider your monthly budget for premiums
+- Think about your expected healthcare needs
+- Check if your preferred doctors are in-network
+- Compare deductibles and out-of-pocket maximums
+
+Would you like me to help you understand any specific aspect of health insurance?"""
                 new_plan_names = []
 
         # Display assistant message
@@ -226,6 +249,23 @@ with col2:
             st.markdown(f"- {plan_type}: {count:,}")
     
     st.markdown("---")
+    
+    # Check if API is configured
+    api_key = os.getenv('GOOGLE_API_KEY')
+    if not api_key or api_key == 'your_google_gemini_api_key_here':
+        st.markdown("### ⚠️ API Setup Required")
+        st.markdown("""
+        The AI chat feature requires a Google Gemini API key.
+        
+        **To set up:**
+        1. Get an API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+        2. Edit the `.env` file in your project root
+        3. Add: `GOOGLE_API_KEY=your_actual_key`
+        4. Restart the app
+        
+        **Or run:** `python setup_env.py`
+        """)
+        st.info("💡 The chat will still work with helpful insurance information!")
     
     st.markdown("### 💡 Tips")
     st.markdown("- **Be specific** about your needs and budget")

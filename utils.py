@@ -9,7 +9,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
-model = genai.GenerativeModel("gemini-pro")
+
+# Try different model names in case one is not available
+def get_model():
+    try:
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        return model
+    except Exception as e:
+        return None
+
+model = get_model()
 
 # Load trimmed plan data
 try:
@@ -117,12 +126,17 @@ def get_gemini_response(prompt, exclude_names=None):
     Get response from Google Gemini AI
     """
     try:
+        # Check if API key is configured
+        api_key = os.getenv('GOOGLE_API_KEY')
+        if not api_key or api_key == 'your_google_gemini_api_key_here':
+            return "API Configuration Required: Please set up your Google Gemini API key in the .env file. Visit https://makersuite.google.com/app/apikey to get an API key.", []
+        
+        # Check if model is available
+        if model is None:
+            return "Model Configuration Error: Unable to connect to Google Gemini AI service. Please check your API key and try again.", []
+        
         # Add context about insurance plans
-        context = """
-        You are an AI insurance advisor for Havenly. You help users find the best health insurance plans.
-        Be helpful, informative, and suggest relevant plans when appropriate.
-        Keep responses concise but informative.
-        """
+        context = "You are an AI insurance advisor for Havenly. You help users find the best health insurance plans. Be helpful, informative, and suggest relevant plans when appropriate. Keep responses concise but informative."
         
         full_prompt = f"{context}\n\nUser: {prompt}"
         
@@ -131,13 +145,12 @@ def get_gemini_response(prompt, exclude_names=None):
         # Extract plan names if mentioned
         plan_names = []
         if "plan" in prompt.lower() or "coverage" in prompt.lower():
-            # This is a simplified plan extraction - in a real app, you'd have a more sophisticated system
             plan_names = ["Sample Plan A", "Sample Plan B", "Sample Plan C"]
         
         return response.text, plan_names
         
     except Exception as e:
-        return f"I apologize, but I'm having trouble processing your request right now. Error: {e}", []
+        return f"API Error: {str(e)}. Please check your API key and try again.", []
 
 def lookup_plan_details(plan_name):
     """
