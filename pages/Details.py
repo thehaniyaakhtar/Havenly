@@ -30,7 +30,7 @@ st.markdown("""
 st.markdown("# 📝 Plan Details")
 
 # Load dataset
-df = pd.read_csv("filtered_plans.csv")
+df = pd.read_csv("filtered_plan2.csv")
 
 # Get unique plan names
 plan_names = sorted(df["PlanMarketingName"].dropna().unique())
