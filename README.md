@@ -97,6 +97,28 @@ Insurance is overwhelming. Havenly makes it personal, conversational, and empowe
 
 ---
 
+## Screenshots
+
+![Screenshot (376)](https://github.com/user-attachments/assets/e5387ee8-6b1b-46c1-b1a9-c5177ad594d2)
+Home.py
+
+![Screenshot (377)](https://github.com/user-attachments/assets/2ba09bf8-ea22-40be-8ccf-ee52ff97a54b)
+About Us.py
+
+![Screenshot (378)](https://github.com/user-attachments/assets/32d45bd5-be58-4186-b1f5-2fcb0dee1f4e)
+Details.py
+
+![Screenshot (379)](https://github.com/user-attachments/assets/908fb28a-0e1f-4a0d-9870-3f4ddc3b0380)
+Find a Plan.py
+
+![Screenshot (380)](https://github.com/user-attachments/assets/44e6d7d9-e730-4a5c-b30e-06fcd1619255)
+You and your Plan.py
+
+![Screenshot (381)](https://github.com/user-attachments/assets/72ce36f0-74d7-4db8-aaa8-d94d65bf162e)
+You and your Plan.py
+
+---
+
 ## 🤝 Credits
 
 Built with care, submitted for the **DSW GenAI Agent Hackathon 2024**.
