@@ -1,0 +1,11 @@
+streamlit>=1.46.0
+pandas>=2.0.0
+numpy>=1.24.0
+plotly>=5.0.0
+python-dotenv>=1.0.0
+google-generativeai>=0.8.0
+altair>=5.0.0
+streamlit-option-menu>=0.4.0
+streamlit-aggrid>=1.1.0
+streamlit-authenticator>=0.4.0
+extra-streamlit-components>=0.1.80
