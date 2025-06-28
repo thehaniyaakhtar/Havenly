@@ -10,6 +10,12 @@ plan_df = pd.read_csv("filtered_plan2.csv")
 service_df = pd.read_csv("filtered_service_area.csv")
 rate_df = pd.read_csv("filtered_rate2.csv")
 
+# Debug: Check column names
+if "Age" not in rate_df.columns:
+    st.error("⚠️ The rate dataset is missing the 'Age' column. Please check your uploaded file.")
+    st.write("📌 Columns found in rate_df:", rate_df.columns.tolist())
+    st.stop()
+
 # ----- User Form -----
 with st.form("plan_form"):
     st.subheader("Tell us about yourself:")
@@ -25,11 +31,8 @@ with st.form("plan_form"):
     selected_ages = age_ranges[age_group]
 
     tobacco = st.radio("Do you use tobacco?", ["No", "Yes", "Prefer not to say"])
-
     plan_type = st.selectbox("Type of Insurance", ["Individual", "Family", "Child-only"])
-
     state = st.selectbox("State (optional)", ["Any"] + sorted(service_df["StateCode"].dropna().unique()))
-
     needs = st.multiselect(
         "Coverage Preferences (optional)",
         ["Wellness", "Maternity", "Mental Health", "Dental"]
@@ -43,7 +46,7 @@ if submit:
 
     filtered = plan_df.copy()
 
-    # Optional state filter (only if selected)
+    # Optional state filter
     if state != "Any":
         valid_services = service_df[
             (service_df["StateCode"] == state)
@@ -51,7 +54,7 @@ if submit:
         ]["ServiceAreaId"].unique()
         filtered = filtered[filtered["ServiceAreaId"].isin(valid_services)]
 
-    # Plan type is mandatory
+    # Required: Plan type
     if plan_type == "Child-only":
         filtered = filtered[filtered["ChildOnlyOffering"].astype(str).str.lower() == "true"]
     elif plan_type == "Family":
@@ -59,10 +62,8 @@ if submit:
     else:
         filtered = filtered[filtered["MarketCoverage"].str.contains("Individual", na=False)]
 
-    # Merge with rate data based on age group
-    rate_filtered = rate_df[
-        rate_df["Age"].isin(selected_ages)
-    ].copy()
+    # Filter rate by age and tobacco
+    rate_filtered = rate_df[rate_df["Age"].isin(selected_ages)].copy()
 
     if state != "Any":
         rate_filtered = rate_filtered[rate_filtered["StateCode"] == state]
@@ -72,11 +73,11 @@ if submit:
     else:
         rate_filtered = rate_filtered[rate_filtered["Tobacco"].str.lower() == "no"]
 
+    # Merge rate info
     rate_avg = rate_filtered.groupby("PlanId")["IndividualRate"].mean().reset_index()
-
     filtered = pd.merge(filtered, rate_avg, on="PlanId", how="left")
 
-    # Scoring based on needs
+    # Score based on needs
     score_map = {
         "Wellness": "WellnessProgramOffered",
         "Maternity": "IsNoticeRequiredForPregnancy",
@@ -94,7 +95,7 @@ if submit:
 
     filtered["MatchScore"] = filtered.apply(calculate_score, axis=1)
 
-    # Sort by score then price
+    # Sort and show results
     ranked = filtered.sort_values(by=["MatchScore", "IndividualRate"], ascending=[False, True])
     top = ranked.drop_duplicates(subset=["PlanMarketingName"]).head(5)
 
