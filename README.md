@@ -208,8 +208,8 @@ If you run into any issues:
 
 ## 🔗 Useful Links
 
-* 🔴 **Live Demo**: *(Add your Streamlit app link here)*
-* 🧠 **GitHub Repository**: *(Add your GitHub repo link here)*
+* 🔴 **Live Demo**: *[(Click Here!](https://havenly-9jzwuwesaf5w4nca7a4khs.streamlit.app/)*
+* 🧠 **GitHub Repository**: *([Click Here](https://github.com/thehaniyaakhtar/Havenly/tree/master))*
 
 ---
 
