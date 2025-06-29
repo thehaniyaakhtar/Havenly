@@ -319,7 +319,7 @@ Dashboard
 Dashboard
 
 
-![Screenshot (389)](https://github.com/user-attachments/assets/70d87250-723a-495a-8c74-d52645a85a32)
+![Screenshot (389)](https://github.com/user-attachments/assets/02a2e0e8-66e4-4214-a039-a72337bff13a)
 Learn About Plans
 
 
