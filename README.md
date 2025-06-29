@@ -332,7 +332,7 @@ AI Chatbot
 
 ---
 
-**Built with ❤️ to make insurance less painful — one plan at a time.**
+**Built with ❤️ by [Haniya Akhtar](https://www.linkedin.com/in/thehaniyaakhtar/).**
 
 ```
 
