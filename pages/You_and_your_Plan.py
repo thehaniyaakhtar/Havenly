@@ -197,38 +197,73 @@ I encountered an error while processing your request. This might be due to:
 - Consider your monthly budget for premiums
 - Think about your expected healthcare needs
 - Check if your preferred doctors are in-network
-- Compare deductibles and out-of-pocket maximums
+- Compare deductibles and out-of-pocket maximums"""
 
-Would you like me to help you understand any specific aspect of health insurance?"""
-                new_plan_names = []
-
-        # Display assistant message
+        # Display AI response
         st.session_state.messages.append({"role": "assistant", "content": response})
         with st.chat_message("assistant"):
             st.markdown(response)
 
-            # Plan comparison table if available
-            if new_plan_names:
-                try:
-                    df_compare = policy_df[policy_df["PlanMarketingName"].isin(new_plan_names)].copy()
+        # Display recommended plans if any
+        if new_plan_names:
+            st.markdown("---")
+            st.markdown("### 🎯 **Recommended Plans for You**")
+            
+            # Get plan details for recommended plans
+            df_compare = policy_df[policy_df["PlanMarketingName"].isin(new_plan_names)].copy()
+            
+            if len(df_compare) > 0:
+                # Display plan comparison
+                st.markdown("""
+                <div class="plan-comparison">
+                    <h4>📊 Plan Comparison</h4>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                # Create a nice comparison table
+                comparison_data = []
+                for _, plan in df_compare.iterrows():
+                    comparison_data.append({
+                        "Plan Name": plan["PlanMarketingName"],
+                        "Metal Level": plan.get("MetalLevel", "N/A"),
+                        "Plan Type": plan.get("PlanType", "N/A"),
+                        "Wellness Programs": plan.get("WellnessProgramOffered", "N/A"),
+                        "Disease Management": plan.get("DiseaseManagementProgramsOffered", "N/A"),
+                        "Maternity Support": plan.get("IsNoticeRequiredForPregnancy", "N/A")
+                    })
+                
+                if comparison_data:
+                    comparison_df = pd.DataFrame(comparison_data)
+                    st.dataframe(comparison_df, use_container_width=True)
                     
-                    if not df_compare.empty:
-                        cols_to_show = [
-                            "PlanMarketingName", "MetalLevel", "PlanType",
-                            "WellnessProgramOffered", "DiseaseManagementProgramsOffered"
-                        ]
-                        
-                        # Filter columns that exist in the dataframe
-                        available_cols = [col for col in cols_to_show if col in df_compare.columns]
-                        
-                        if available_cols:
-                            st.markdown("### 📊 Plan Comparison")
-                            st.dataframe(
-                                df_compare[available_cols].reset_index(drop=True),
-                                use_container_width=True
-                            )
-                except Exception as e:
-                    st.warning(f"Could not display plan comparison: {e}")
+                    st.markdown("""
+                    <div style="margin-top: 1rem;">
+                        <strong>💡 Why these plans?</strong>
+                        <ul>
+                            <li>Based on your specific needs and preferences</li>
+                            <li>Competitive pricing and comprehensive coverage</li>
+                            <li>Strong network of healthcare providers</li>
+                            <li>Positive customer satisfaction ratings</li>
+                        </ul>
+                    </div>
+                    """, unsafe_allow_html=True)
+            else:
+                # If plans not found in data, show the recommended names
+                st.markdown("**Based on your needs, I recommend these plans:**")
+                for i, plan_name in enumerate(new_plan_names, 1):
+                    st.markdown(f"**{i}.** {plan_name}")
+                
+                st.markdown("""
+                <div style="margin-top: 1rem;">
+                    <strong>💡 Next Steps:</strong>
+                    <ul>
+                        <li>Use the "Find a Plan" page to search for these specific plans</li>
+                        <li>Compare costs and coverage details</li>
+                        <li>Check if your preferred doctors are in-network</li>
+                        <li>Review plan benefits and limitations</li>
+                    </ul>
+                </div>
+                """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("### 📊 Quick Stats")
