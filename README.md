@@ -1,259 +1,219 @@
-# 🏥 Havenly - Insurance Plan Finder
+## 🏥 Havenly – Your AI-Powered Health Insurance Advisor
 
-A modern, user-friendly insurance plan comparison and recommendation platform built with Streamlit and React. Find the perfect health insurance plan tailored to your needs with our intelligent AI assistant.
+**Havenly** is a smart, intuitive platform that helps you **find, compare, and understand** health insurance plans that truly match your needs. Built using **Streamlit**, **React**, and powered by **Google Gemini AI**, Havenly brings a personalized, conversational experience to insurance — an industry known for being complicated and impersonal.
 
-## ✨ Features
+---
 
-### 🎯 **Core Functionality**
-- **Smart Plan Search**: Find insurance plans based on location, age, income, and preferences
-- **AI-Powered Recommendations**: Get personalized plan suggestions with detailed explanations
-- **Interactive Dashboard**: Visualize plan statistics, costs, and coverage options
-- **Plan Details Explorer**: Deep dive into specific plan features and benefits
-- **Intelligent Chatbot**: Ask questions about plans, coverage, and insurance terms
+## ✨ Why Havenly?
 
-### 🎨 **Modern UI/UX**
-- **Earthy Color Scheme**: Beautiful greens and browns for a natural, trustworthy feel
-- **Minimal Design**: Clean, consistent interface across all pages
-- **Responsive Layout**: Works seamlessly on desktop and mobile devices
-- **Card-Based Results**: Easy-to-scan plan comparisons with key information
+✔️ Personalized plan suggestions based on your age, location, income, and coverage needs  
+✔️ Friendly AI chatbot that answers your insurance questions in real-time  
+✔️ Side-by-side plan comparisons with visual insights  
+✔️ Clean, minimal UI with a warm, trustworthy design  
+✔️ Built to run fast — even on large datasets
 
-### 🚀 **Performance Optimized**
-- **Trimmed Datasets**: Optimized CSV files for faster loading and deployment
-- **Memory Efficient**: No caching issues or memory errors
-- **Streamlined Backend**: Efficient data processing and analysis
+---
 
-## 🛠️ Technology Stack
+## 🧠 Key Features
 
-### **Backend**
-- **Streamlit**: Main application framework
-- **Pandas**: Data manipulation and analysis
-- **Python**: Core programming language
+### 🎯 Core Functionality
+- **Smart Plan Search**: Enter your basic info, get filtered insurance plans
+- **AI-Powered Recommendations**: Gemini AI explains *why* a plan is recommended
+- **Interactive Dashboard**: Visualize plan coverage, cost trends, and filters
+- **Plan Explorer**: Deep dive into each plan’s benefits and features
+- **Chatbot Assistant**: Ask about coverage terms, premium impact, eligibility, and more
 
-### **Frontend**
-- **React**: Modern UI components
-- **Tailwind CSS**: Utility-first styling
-- **JavaScript**: Interactive functionality
+### 🎨 Beautiful, Minimal Design
+- Earthy green & brown palette for a grounded, calming experience
+- Responsive across devices — works great on phones, tablets, and desktops
+- Card-based layout for easy comparison and readability
 
-### **Data**
-- **CSV Files**: Optimized insurance datasets
-- **AI Integration**: Intelligent plan recommendations
+### 🚀 Optimized for Performance
+- Uses trimmed datasets for faster load time
+- Memory-efficient processing with no caching conflicts
+- Streamlit Cloud ready with minimal setup
 
-## 📁 Project Structure
+---
 
-```
-poly/
-├── Home.py                 # Main Streamlit application
-├── pages/                  # Streamlit pages
-│   ├── Dashboard.py        # Analytics dashboard
-│   ├── Details.py          # Plan details explorer
-│   ├── Find_a_Plan.py      # Plan search and comparison
-│   ├── You_and_your_Plan.py # AI chatbot assistant
-│   └── About_Us.py         # About page
-├── src/                    # React frontend
-│   ├── components/         # React components
-│   ├── App.js             # Main React app
-│   └── index.js           # React entry point
-├── filtered_plan2.csv     # Optimized plan data
-├── filtered_rate2.csv     # Optimized rate data
-├── filtered_benefits2.csv # Optimized benefits data
-├── filtered_service_area.csv # Service area data
-├── requirements.txt       # Python dependencies
-├── package.json          # Node.js dependencies
-└── README.md            # This file
-```
+## 📊 Data Sources
 
-## 🚀 Quick Start
+We use public health insurance data sourced from **Kaggle**:
 
-### **Local Development**
+- [🗂 Health Insurance Marketplace Datasets (Kaggle)](https://www.kaggle.com/datasets/hhs/health-insurance-marketplace)
+
+These include:
+- **Plans** – Insurance plans and provider information
+- **Rates** – Premium costs for different user demographics
+- **Benefits** – Coverage details for wellness, maternity, etc.
+- **Service Areas** – Geographical plan availability
+
+All files are optimized as CSVs for efficient performance.
+
+---
+
+## ⚙️ Configuration & Setup
+
+### 🔧 System Requirements
+- Python 3.10+
+- Node.js (optional, for frontend React components)
+- Git
+- Streamlit CLI
+
+---
+
+### 💻 Local Setup
 
 1. **Clone the repository**
-   ```bash
+   
+```bash
    git clone https://github.com/yourusername/Havenly.git
    cd Havenly
-   ```
+````
 
 2. **Set up Python environment**
+
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate       # For Windows: venv\Scripts\activate
    pip install -r requirements.txt
    ```
 
-3. **Run the Streamlit app**
+3. **Run the Streamlit App**
+
    ```bash
    streamlit run Home.py
    ```
 
-4. **Set up React frontend (optional)**
+4. *(Optional)* **Set up React Frontend**
+
    ```bash
    npm install
    npm start
    ```
 
-### **Deployment on Streamlit Cloud**
+---
 
-1. **Push to GitHub**
+## ☁️ Deploying to Streamlit Cloud
+
+1. Push your code to GitHub:
+
    ```bash
    git add .
-   git commit -m "Your commit message"
+   git commit -m "Deploy Havenly"
    git push origin master
    ```
 
-2. **Deploy on Streamlit Cloud**
-   - Go to [share.streamlit.io](https://share.streamlit.io)
-   - Connect your GitHub repository
-   - Set branch to **master** (not main)
-   - Deploy!
+2. Visit: [https://share.streamlit.io](https://share.streamlit.io)
 
-## 📊 Data Sources
+3. Connect your GitHub repository.
 
-The application uses optimized insurance datasets:
-- **Plans**: Health insurance plan information and features
-- **Rates**: Premium rates and pricing data
-- **Benefits**: Coverage details and benefits information
-- **Service Areas**: Geographic coverage information
+4. Choose `master` as the branch and `Home.py` as the entry file.
 
-All datasets have been trimmed for optimal performance and deployment.
+5. Click **Deploy** and you're live! 🚀
 
-## 🎯 Key Features Explained
-
-### **Smart Plan Finder**
-- Enter your location, age, and income
-- Get personalized plan recommendations
-- Compare costs, coverage, and features
-- View "Why this plan?" explanations
-
-### **Interactive Dashboard**
-- Visualize plan statistics by metal level
-- Compare average premiums across categories
-- Explore coverage trends and patterns
-- Interactive charts and graphs
-
-### **AI Chatbot Assistant**
-- Ask questions about insurance terms
-- Get plan recommendations
-- Understand coverage options
-- Receive personalized advice
-
-### **Plan Details Explorer**
-- Deep dive into specific plans
-- View all plan features and benefits
-- Compare plan types and metal levels
-- Understand coverage limitations
-
-## 🎨 Design Philosophy
-
-### **Earthy Color Palette**
-- **Primary Green**: #228B22 (Forest Green)
-- **Secondary Brown**: #8B4513 (Saddle Brown)
-- **Accent Colors**: Various shades of green and brown
-- **Background**: Clean whites and light grays
-
-### **Minimal UI Principles**
-- Clean, uncluttered interfaces
-- Consistent spacing and typography
-- Card-based information display
-- Intuitive navigation
-
-## 🔧 Configuration
-
-### **Streamlit Configuration**
-The app uses default Streamlit settings with optimized performance:
-- No caching to prevent memory issues
-- Efficient data loading
-- Responsive design
-
-### **Environment Variables**
-No sensitive environment variables required - all data is public insurance information.
-
-## 🐛 Troubleshooting
-
-### **Common Issues**
-
-1. **Port Already in Use**
-   ```bash
-   streamlit run Home.py --server.port 8502
-   ```
-
-2. **Memory Errors**
-   - The app now uses optimized datasets
-   - No caching to prevent memory issues
-   - Efficient data processing
-
-3. **File Not Found Errors**
-   - All files use the correct trimmed dataset names
-   - Ensure all CSV files are in the root directory
-   - Fixed Details.py to use `filtered_plan2.csv`
-
-4. **Duplicate Labels Error**
-   - Fixed groupby operations in Home.py and Dashboard.py
-   - Proper data merging to avoid duplicate indices
-
-5. **HTML Rendering Issues**
-   - Fixed About_Us.py HTML rendering
-   - Simplified HTML in Find_a_Plan.py and You_and_your_Plan.py
-
-### **Performance Tips**
-- Use the trimmed datasets for faster loading
-- Clear browser cache if experiencing issues
-- Restart the app if memory issues occur
-- Clear Streamlit cache if needed: `streamlit cache clear`
-
-### **Deployment Issues**
-- Ensure you're using the **master** branch (not main) for Streamlit Cloud
-- All CSV files must be in the root directory
-- Check that all file paths are correct
-
-## 📈 Recent Updates
-
-### **v2.1 - Bug Fixes & Stability**
-- ✅ Fixed Details.py FileNotFoundError (filtered_plan2.csv)
-- ✅ Resolved duplicate labels in groupby operations
-- ✅ Fixed HTML rendering issues in About_Us.py
-- ✅ Improved error handling across all pages
-- ✅ Enhanced deployment stability
-
-### **v2.0 - Performance & UI Overhaul**
-- ✅ Switched to trimmed datasets for faster performance
-- ✅ Implemented earthy green/brown color scheme
-- ✅ Added minimal, consistent UI design
-- ✅ Fixed all memory and caching issues
-- ✅ Enhanced AI chatbot capabilities
-- ✅ Improved plan comparison interface
-- ✅ Added "Why this plan?" explanations
-- ✅ Optimized for Streamlit Cloud deployment
-
-### **v1.0 - Initial Release**
-- Basic plan search functionality
-- Simple dashboard
-- Plan details viewer
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🆘 Support
-
-If you encounter any issues:
-1. Check the troubleshooting section above
-2. Review the error logs
-3. Create an issue on GitHub
-4. Contact the development team
-
-## 🔗 Links
-
-- **Live Demo**: [Streamlit Cloud Deployment](your-streamlit-url)
-- **GitHub Repository**: [Havenly](https://github.com/yourusername/Havenly)
-- **Documentation**: See DEPLOYMENT.md for detailed setup instructions
+> ⚠️ Ensure all required CSV files are in the **root directory** for successful deployment.
 
 ---
 
-**Built with ❤️ for better insurance experiences**
+## 📈 How It Works (Under the Hood)
+
+1. **User Input**: You enter age, location, income, and preferences.
+2. **Plan Matching**: We filter plans by location and score them by coverage, features, and cost.
+3. **AI Interaction**: Gemini AI answers your questions and explains why a plan is a good match.
+4. **Dashboard**: Use filters and charts to compare plans visually.
+5. **Plan Explorer**: View detailed features and benefits of selected plans.
+6. **Deployment**: Hosted on Streamlit Cloud with optimized memory and no caching issues.
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+
+* **Python**
+* **Streamlit** – App framework
+* **Pandas** – Data wrangling
+* **Google Gemini API** – Conversational intelligence
+
+### Frontend (Optional)
+
+* **React** – UI components
+* **Tailwind CSS** – Clean, responsive styling
+* **JavaScript** – Interactivity
+
+### Data
+
+* Optimized CSVs (from Healthcare.gov / Kaggle)
+* Real-time filtering and plan scoring
+
+---
+
+## 🐛 Troubleshooting
+
+| Problem                 | Solution                                                                         |
+| ----------------------- | -------------------------------------------------------------------------------- |
+| **Port already in use** | Run: `streamlit run Home.py --server.port 8502`                                  |
+| **File Not Found**      | Ensure all CSVs are in root folder, check `Details.py` uses `filtered_plan2.csv` |
+| **Memory Errors**       | Use trimmed CSVs, avoid using large unfiltered datasets                          |
+| **HTML Not Rendering**  | Check `About_Us.py`, use basic HTML tags                                         |
+| **Duplicate Labels**    | Groupby fix already applied in `Home.py`, `Dashboard.py`                         |
+
+💡 **Clear cache if needed**:
+
+```bash
+streamlit cache clear
+```
+
+---
+
+## 🆕 Recent Updates
+
+### ✅ v2.1 – Bug Fixes & Stability
+
+* Fixed file path issues in `Details.py`
+* Resolved duplicate group labels
+* Cleaned up HTML rendering across components
+* Improved error handling and stability on Streamlit Cloud
+
+### ✨ v2.0 – Performance + UI Overhaul
+
+* Switched to trimmed, optimized datasets
+* Redesigned UI with green-brown color palette
+* Improved chatbot experience
+* “Why this plan?” explanations added
+* Better visual comparisons in dashboard
+
+---
+
+## 🤝 Contributing
+
+We welcome collaboration!
+
+1. Fork the repo
+2. Create a new feature branch
+3. Make and test your changes
+4. Open a pull request with clear description
+
+---
+
+## 💬 Need Help?
+
+If you run into any issues:
+
+* Check the **Troubleshooting** section above
+* Open an issue on GitHub
+* Or contact the team
+
+---
+
+## 🔗 Useful Links
+
+* 🔴 **Live Demo**: *(Add your Streamlit app link here)*
+* 🧠 **GitHub Repository**: *(Add your GitHub repo link here)*
+
+---
+
+**Built with ❤️ to make insurance less painful — one plan at a time.**
+
+```
+
