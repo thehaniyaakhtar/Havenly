@@ -302,7 +302,7 @@ If you run into any issues:
 
 ---
 
-# Screenshots
+# Screenshots (visit page for a more comprehensive look!)
 ![Screenshot (382)](https://github.com/user-attachments/assets/1de5283d-4f1f-463e-99ea-3dc516412d3f)
 Home Page
 
