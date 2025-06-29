@@ -213,6 +213,30 @@ If you run into any issues:
 
 ---
 
+# Screenshots
+![Screenshot (382)](https://github.com/user-attachments/assets/1de5283d-4f1f-463e-99ea-3dc516412d3f)
+Home Page
+
+![Screenshot (383)](https://github.com/user-attachments/assets/22161511-3934-4299-aeb6-278cdb1e3510)
+About US
+
+![Screenshot (384)](https://github.com/user-attachments/assets/e46ab352-135b-4c87-b285-fed5bb43beba)
+Dashboard
+
+![Screenshot (385)](https://github.com/user-attachments/assets/ae7444de-072b-438e-9808-940550f27b9c)
+Dashboard
+
+![Screenshot (386)](https://github.com/user-attachments/assets/d0de8202-b5dc-4a25-812b-1b053e28c567)
+Learn About Plans
+
+![Screenshot (387)](https://github.com/user-attachments/assets/a5cbac65-4b4f-471e-b897-aaa79e25d63e)
+Find A Plan based on a Criteria
+
+![Screenshot (388)](https://github.com/user-attachments/assets/7d0e60e8-47c9-4de7-82dc-c66e2a617f74)
+AI Chatbot
+
+---
+
 **Built with ❤️ to make insurance less painful — one plan at a time.**
 
 ```
