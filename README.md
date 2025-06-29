@@ -323,11 +323,11 @@ Dashboard
 Learn About Plans
 
 
-![Screenshot (387)](https://github.com/user-attachments/assets/a5cbac65-4b4f-471e-b897-aaa79e25d63e)
+![Screenshot (387)](https://github.com/user-attachments/assets/c262d81c-f2ae-4730-b318-2d2cc1acc534)
 Find A Plan based on a Criteria
 
 
-![Screenshot (390)](https://github.com/user-attachments/assets/63b53b25-0b0f-41bc-9820-e194cec0996a)
+![Screenshot (390)](https://github.com/user-attachments/assets/10ef7f01-b545-4c86-bb62-f2bfc672bb1c)
 AI Chatbot
 
 ---
