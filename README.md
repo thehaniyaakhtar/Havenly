@@ -53,6 +53,95 @@ All files are optimized as CSVs for efficient performance.
 
 ## ⚙️ Configuration & Setup
 
+### File Structure
+6. **Deployment**: Hosted on Streamlit Cloud with optimized memory and no caching issues.
+
+---
+
+## 📁 Project Structure
+
+```
+havenly/
+├──  Core Application Files
+│   ├── Home.py                    # Main Streamlit application entry point
+│   ├── start_app.py              # Application startup script
+│   ├── utils.py                  # Utility functions and AI integration
+│   └── setup_env.py              # Environment setup script
+│
+├──  Data Files (Optimized for Deployment)
+│   ├── filtered_plan2.csv        # Insurance plan data (1,000+ plans)
+│   ├── filtered_rate2.csv        # Premium rates and pricing data
+│   ├── filtered_benefits2.csv    # Coverage benefits information
+│   ├── filtered_service_area.csv # Geographic service areas
+│   └── filtered_plans.csv        # Original comprehensive plan data (31MB)
+│
+├──  Data Processing Scripts
+│   ├── load_plans.py             # Plan data loading and filtering
+│   ├── filtered_rate2.py         # Rate data processing
+│   ├── filtered_services.py      # Service area data processing
+│   ├── trim_benefits.py          # Benefits data optimization
+│   ├── trim_rate.py              # Rate data optimization
+│   ├── trim_service.py           # Service area optimization
+│   └── trim_business_rules.py    # Business rules processing
+│
+├──  Streamlit Pages
+│   ├── pages/
+│   │   ├── Dashboard.py          # Analytics and market insights
+│   │   ├── Find_a_Plan.py        # Plan search and comparison
+│   │   ├── Details.py            # Detailed plan information
+│   │   ├── You_and_your_Plan.py  # AI chatbot assistant
+│   │   └── About_Us.py           # About page and information
+│
+├──  React Frontend (Optional)
+│   ├── src/
+│   │   ├── components/           # React components
+│   │   │   ├── HomePage.js       # Home page component
+│   │   │   ├── Dashboard.js      # Dashboard component
+│   │   │   ├── PlanFinder.js     # Plan finder component
+│   │   │   ├── About.js          # About component
+│   │   │   └── Navbar.js         # Navigation component
+│   │   ├── App.js                # Main React application
+│   │   ├── index.js              # React entry point
+│   │   └── index.css             # Global styles
+│   ├── public/
+│   │   └── index.html            # HTML template
+│   ├── package.json              # Node.js dependencies
+│   ├── tailwind.config.js        # Tailwind CSS configuration
+│   └── postcss.config.js         # PostCSS configuration
+│
+├──  Configuration Files
+│   ├── requirements.txt          # Python dependencies
+│   ├── .gitignore               # Git ignore patterns
+│   ├── .streamlit/              # Streamlit configuration
+│   └── venv/                    # Python virtual environment
+│
+├──  Documentation
+│   ├── README.md                # Main project documentation
+│   ├── DEPLOYMENT.md            # Deployment instructions
+│   ├── GIT_FILES_SUMMARY.md     # Git repository summary
+│   └── PROJECT_STRUCTURE.md     # File structure guide
+│
+├──  Testing & Development
+│   ├── test_chat.py             # Chatbot testing script
+│   └── __pycache__/             # Python cache files
+│
+└──  Assets
+    ├── img.jfif                 # Application images
+    └── imgg.jfif                # Additional images
+```
+
+### **Key File Descriptions**
+
+- **`Home.py`**: Main application with landing page, metrics, and navigation
+- **`utils.py`**: AI integration, data loading, and utility functions
+- **`filtered_plan2.csv`**: Optimized plan data with realistic plan names
+- **`Dashboard.py`**: Interactive analytics and market insights
+- **`Find_a_Plan.py`**: Plan search with filtering and comparison
+- **`You_and_your_Plan.py`**: AI chatbot with plan recommendations
+
+---
+
+## 🛠️ Tech Stack
 ### 🔧 System Requirements
 - Python 3.10+
 - Node.js (optional, for frontend React components)
@@ -217,22 +306,28 @@ If you run into any issues:
 ![Screenshot (382)](https://github.com/user-attachments/assets/1de5283d-4f1f-463e-99ea-3dc516412d3f)
 Home Page
 
+
 ![Screenshot (383)](https://github.com/user-attachments/assets/22161511-3934-4299-aeb6-278cdb1e3510)
-About US
+About Us
+
 
 ![Screenshot (384)](https://github.com/user-attachments/assets/e46ab352-135b-4c87-b285-fed5bb43beba)
 Dashboard
 
+
 ![Screenshot (385)](https://github.com/user-attachments/assets/ae7444de-072b-438e-9808-940550f27b9c)
 Dashboard
 
-![Screenshot (386)](https://github.com/user-attachments/assets/d0de8202-b5dc-4a25-812b-1b053e28c567)
+
+![Screenshot (389)](https://github.com/user-attachments/assets/70d87250-723a-495a-8c74-d52645a85a32)
 Learn About Plans
+
 
 ![Screenshot (387)](https://github.com/user-attachments/assets/a5cbac65-4b4f-471e-b897-aaa79e25d63e)
 Find A Plan based on a Criteria
 
-![Screenshot (388)](https://github.com/user-attachments/assets/7d0e60e8-47c9-4de7-82dc-c66e2a617f74)
+
+![Screenshot (390)](https://github.com/user-attachments/assets/63b53b25-0b0f-41bc-9820-e194cec0996a)
 AI Chatbot
 
 ---
